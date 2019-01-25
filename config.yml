@@ -1,0 +1,8 @@
+app:
+  name: deotry
+  database:
+    user: root
+    password: imdeo
+    host: localhost
+    port: 23306
+    db: imdeo
