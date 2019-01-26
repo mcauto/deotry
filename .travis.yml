@@ -2,6 +2,9 @@ language: go
 sudo: required
 dist: trusty
 
+env:
+  - COVERALLS_TOKEN=FlC7Mbm5vret3pzDrYq74RXAeNyHQrlFF
+
 services:
   - docker
   
@@ -13,16 +16,24 @@ os:
   
 branches:
   - master
-  - devel
+  - develop
   
 addons:
   apt:
     packages:
     - cmake
-    
+
+before_install:
+  - go get github.com/mattn/goveralls
+  - go get golang.org/x/tools/cmd/cover
+
 install:
   - bash ./tools/install_required.sh
   - ln -Tfs $TRAVIS_BUILD_DIR $GOPATH/src/deotry
+  - go get golang.org/x/tools/cmd/cover
+  - go get github.com/mattn/goveralls
 
 script:
   - make
+  - go test -v ./... -covermode=count -coverprofile=coverage.out
+  - $HOME/gopath/bin/goveralls -coverprofile=coverage.out -service=travis-ci -repotoken $COVERALLS_TOKEN

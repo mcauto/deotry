@@ -63,7 +63,12 @@ race:
 #			@go get -u github.com/axw/gocov
 coverage:
 	@echo "${GREEN}Check code coverage${NC}"
-	@gocov test ${PKG_LIST} | gocov report 
+	@gocov test ${PKG_LIST} | gocov report
+
+coverage-report:
+	@echo "${GREEN}Make code coverage report${NC}"
+	@mkdir -p coverage
+	@gocov test ${PKG_LIST} | gocov-html > coverage/report.html
 
 # Dependency installation
 dep:

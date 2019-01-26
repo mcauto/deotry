@@ -2,6 +2,7 @@
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/mcauto/deotry)](https://goreportcard.com/report/github.com/mcauto/deotry)
 [![Build Status](https://travis-ci.org/mcauto/deotry.svg?branch=master)](https://travis-ci.org/mcauto/deotry)
+[![Coverage Status](https://coveralls.io/repos/github/mcauto/deotry/badge.svg?branch=develop)](https://coveralls.io/github/mcauto/deotry?branch=develop)
 
 Deotry is golang seed project
 
