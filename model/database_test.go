@@ -14,3 +14,11 @@ func TestConnectDB(t *testing.T) {
 		t.Error(err)
 	}
 }
+
+func TestConnectDBFail(t *testing.T) {
+	url := ""
+	_, err := ConnectDB(url)
+	if err == nil {
+		t.Errorf("상상도 하지 못한 에러")
+	}
+}
