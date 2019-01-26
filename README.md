@@ -1,5 +1,7 @@
 # Deotry
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/mcauto/deotry)](https://goreportcard.com/report/github.com/mcauto/deotry)
+
 Deotry is golang seed project
 
 
