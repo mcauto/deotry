@@ -1,0 +1,28 @@
+language: go
+sudo: required
+dist: trusty
+
+services:
+  - docker
+  
+go:
+  - "1.11"
+
+os:
+  - linux
+  
+branches:
+  - master
+  - devel
+  
+addons:
+  apt:
+    packages:
+    - cmake
+    
+install:
+  - bash ./tools/install_required.sh
+  - ln -Tfs $TRAVIS_BUILD_DIR $GOPATH/src/deotry
+
+script:
+  - make

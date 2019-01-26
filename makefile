@@ -35,8 +35,8 @@ vet:
 #				@curl -L https://git.io/vp6lP | sh # Linux
 #				@brew tap alecthomas/homebrew-tap & brew install gometalinter # MacOS
 #			2. https://github.com/gojp/goreportcard
+#				@go get -u github.com/gojp/goreportcard/cmd/goreportcard-cli
 goreport:
-	@go get -u github.com/gojp/goreportcard/cmd/goreportcard-cli
 	@echo "${GREEN}Run goreportcard-cli${NC}"
 	@goreportcard-cli
 
@@ -60,8 +60,8 @@ race:
 
 # Make code coverage report 
 # (require) https://github.com/axw/gocov
+#			@go get -u github.com/axw/gocov
 coverage:
-	@go get -u github.com/axw/gocov
 	@echo "${GREEN}Check code coverage${NC}"
 	@gocov test ${PKG_LIST} | gocov report 
 
