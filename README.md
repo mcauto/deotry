@@ -1,8 +1,25 @@
 # Deotry
 
-## 실행 방법
+Deotry is golang seed project
+
+
+
+## How to start
 
 ``` bash
-# mysql container 실행
-docker-compose up -d 
+make
 ```
+
+
+
+## Project structure
+- [x] Split configuration ([viper](https://github.com/spf13/viper), [go build constraints](https://golang.org/pkg/go/build/#hdr-Build_Constraints)) 
+- [x] Database connect ([gorm](https://github.com/jinzhu/gorm))
+- [x] Code Quality Check
+  - [x] Gofmt
+  - [x] Golint
+  - [x] Vet
+  - [x] Unittests
+  - [x] Code coverage([gocov](https://github.com/axw/gocov))
+  - [x] Go report card([goreportcard-cli](github.com/gojp/goreportcard/cmd/goreportcard-cli))
+- [x] Dependency management ([dep][https://github.com/jinzhu/gorm])
