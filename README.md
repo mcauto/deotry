@@ -27,3 +27,5 @@ make
   - [x] Code coverage([gocov](https://github.com/axw/gocov))
   - [x] Go report card([goreportcard-cli](github.com/gojp/goreportcard/cmd/goreportcard-cli))
 - [x] Dependency management ([dep][https://github.com/jinzhu/gorm])
+- [x] Logging ([distillog](https://github.com/amoghe/distillog), [lumberjack](https://github.com/natefinch/lumberjack))
+  - [x] Rotate file
