@@ -1,11 +1,16 @@
-
+NAME := deotry
 PKG_LIST := $(shell go list ./... | grep -v /vendor/)
 GO_FILES := $(shell find . -name '*.go' | grep -v /vendor/ | grep -v _test.go)
 
 GREEN := \033[0;32m
 NC := \033[0;m
 
-all: clean dep fmt lint vet goreport setup test race coverage 
+all: clean dep fmt lint vet goreport setup build test race coverage 
+
+build:
+	@echo  "${GREEN}Deotry build...${NC}"
+	@mkdir -p build
+	@go build -o build/${NAME}
 
 # Run gofmt
 fmt:
@@ -23,7 +28,7 @@ fmtcheck:
 	fi
 
 # Lint check
-lint: 
+lint:
 	@echo "${GREEN}Start golint${NC}"
 	@golint -set_exit_status ${PKG_LIST}
 
@@ -79,6 +84,7 @@ clean:
 	@echo "${GREEN}Clean project${NC}"
 	@docker-compose down
 	@rm -rf vendor
+	@rm -rf build
 	@go clean
 
-.PHONY: all fmt fmtcheck lint vet goreport setup test race coverage dep clean
+.PHONY: all fmt fmtcheck lint vet goreport setup build test race coverage dep clean

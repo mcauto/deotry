@@ -72,6 +72,14 @@
   version = "v1.8.0"
 
 [[projects]]
+  digest = "1:df8c6236b889bfb09cd4261e91aa20216ada90f8d16520fb4335a30f3c52974a"
+  name = "github.com/mcauto/daemon"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "aa76b0035d1239b7bb3ae1bd84cd88ef2e0a1f1e"
+  version = "0.11.0"
+
+[[projects]]
   digest = "1:53bc4cd4914cd7cd52139990d5170d6dc99067ae31c56530621b18b35fc30318"
   name = "github.com/mitchellh/mapstructure"
   packages = ["."]
@@ -132,9 +140,15 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:db12953ac7a80656b159265fe13146959beaada45938a532f484a3aeb289462e"
+  digest = "1:dcec89d73403181ac3a7f0d0d70e52ac3d60b222656df58ac2c0e7773c62df3f"
   name = "golang.org/x/sys"
-  packages = ["unix"]
+  packages = [
+    "unix",
+    "windows",
+    "windows/registry",
+    "windows/svc",
+    "windows/svc/mgr",
+  ]
   pruneopts = "UT"
   revision = "b90733256f2e882e81d52f9126de08df5615afd9"
 
@@ -184,6 +198,7 @@
     "github.com/amoghe/distillog",
     "github.com/jinzhu/gorm",
     "github.com/jinzhu/gorm/dialects/mysql",
+    "github.com/mcauto/daemon",
     "github.com/spf13/viper",
     "gopkg.in/natefinch/lumberjack.v2",
   ]
